@@ -45,8 +45,8 @@ const square = new DomElement('.block', 100, 100, 'red');
 square.addElement();
 
 const block = document.querySelector('.block');
+block.textContent = '';
 block.style.position = 'absolute';
-block.style.textAlign = 'center';
 
 let moveLeft = 0;
 let moveDown = 0;
