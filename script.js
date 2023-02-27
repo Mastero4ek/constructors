@@ -37,49 +37,49 @@ const DomElement = function(selector, height, width, bg, fontSize) {
 	}
 };
 
-const newDomElement1 = new DomElement('#block', 20, 1000, 'rgba(53, 89, 64, .6)', 16);
-const newDomElement2 = new DomElement('.block', 30, 500, 'rgba(148, 87, 51, .6)', 20);
-newDomElement1.addElement();
-newDomElement2.addElement();
+// const newDomElement1 = new DomElement('#block', 20, 1000, 'rgba(53, 89, 64, .6)', 16);
+// const newDomElement2 = new DomElement('.block', 30, 500, 'rgba(148, 87, 51, .6)', 20);
+// newDomElement1.addElement();
+// newDomElement2.addElement();
 
-// const square = new DomElement('.block', 100, 100, 'red');
-// square.addElement();
+const square = new DomElement('.block', 100, 100, 'red');
+square.addElement();
 
-// const block = document.querySelector('.block');
-// block.textContent = '';
-// block.style.position = 'absolute';
+const block = document.querySelector('.block');
+block.textContent = '';
+block.style.position = 'absolute';
 
-// let moveLeft = 0;
-// let moveDown = 0;
+let moveLeft = 0;
+let moveDown = 0;
 
-// function move(event) {
-// 	switch(true) {
-// 		case event.key === 'ArrowRight':
-// 			moveLeft = moveLeft + 10;
-// 			block.style.left = moveLeft + 'px';
-// 		break;
+function move(event) {
+	switch(true) {
+		case event.key === 'ArrowRight':
+			moveLeft = moveLeft + 10;
+			block.style.left = moveLeft + 'px';
+		break;
 
-// 		case event.key === 'ArrowLeft':
-// 			moveLeft = moveLeft - 10;
-// 			block.style.left = moveLeft + 'px';
-// 		break;
+		case event.key === 'ArrowLeft':
+			moveLeft = moveLeft - 10;
+			block.style.left = moveLeft + 'px';
+		break;
 
-// 		case event.key === 'ArrowUp':
-// 			moveDown = moveDown - 10;
-// 			block.style.top = moveDown + 'px';
-// 		break;
+		case event.key === 'ArrowUp':
+			moveDown = moveDown - 10;
+			block.style.top = moveDown + 'px';
+		break;
 
-// 		case event.key === 'ArrowDown':
-// 			moveDown = moveDown + 10;
-// 			block.style.top = moveDown + 'px';
-// 		break;
+		case event.key === 'ArrowDown':
+			moveDown = moveDown + 10;
+			block.style.top = moveDown + 'px';
+		break;
 
-// 		default:
-// 			alert('Двигай квадрат стрелками на клавиатуре!');
-// 		break;
-// 	}
-// }
+		default:
+			alert('Двигай квадрат стрелками на клавиатуре!');
+		break;
+	}
+}
 
-// document.addEventListener('keydown', (event) => {
-// 	move(event);
-// });
+document.addEventListener('keydown', (event) => {
+	move(event);
+});
