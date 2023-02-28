@@ -9,11 +9,13 @@ const DomElement = function(selector, height, width, bg, fontSize) {
 	this.bg = bg,
 	this.fontSize = fontSize + 'px',
 	this.createElement = function(elem) {
-		elem.style.height = this.height;
-		elem.style.width = this.width;
-		elem.style.background = this.bg;
-		elem.style.fontSize = this.fontSize;
-		elem.textContent = 'Привет Александр! :)'
+		elem.style.cssText = `
+			height: ${this.height};
+			width: ${this.width};
+			background: ${this.bg};
+			font-size: ${this.fontSize};
+		`;
+		elem.textContent = 'Привет Александр! :)';
 	},
 	this.addElement = function() {
 		if(this.selector[0] === '.') {
@@ -46,8 +48,10 @@ const square = new DomElement('.block', 100, 100, 'red');
 square.addElement();
 
 const block = document.querySelector('.block');
-block.textContent = '';
 block.style.position = 'absolute';
+block.style.textAlign = 'center';
+block.textContent = '';
+block.innerHTML = `<br>&#5123;<br>&#5130; &nbsp; &nbsp; &nbsp; &#5125; <br> &#5121;`;
 
 let moveLeft = 0;
 let moveDown = 0;
